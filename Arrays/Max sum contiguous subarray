@@ -1,0 +1,35 @@
+int Solution::maxSubArray(const vector<int> &A) {
+    
+    int global,sum,final,check,big,i,j,k,pos,initial;
+    global=sum=check=0;
+    
+    big=A[0];
+    int n=A.size();
+    
+    for(j=0;j<n;j++)
+    {
+        if(A[j]<0)
+        check++;
+    }
+    if(check==n)
+    {
+        for(i=0;i<n;i++)
+        {
+            if(A[i]>big)
+            big=A[i];
+        }
+        return big;
+    }
+    else{
+        for(i=0;i<n;i++)
+        {
+                sum+=A[i];
+                if(sum<0)
+                sum=0;
+                
+                if(global<sum)
+                global=sum;
+            }
+            return global;
+        }
+}
