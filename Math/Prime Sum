@@ -1,0 +1,31 @@
+vector<int> Solution::primesum(int A) {
+   vector<bool> v;
+   vector<int>ans;
+    int i,j;
+    for(i=0;i<=A;i++)
+         v.push_back(true);
+    v[0]=false;
+    v[1]=false;
+    for(i=2;i<=sqrt(A);i++)
+    {
+        if(v[i]==true)
+        {
+            for(j=2;j*i<=A;j++)
+            v[i*j]=false;
+        }
+    }
+   
+    for(i=2;i<A;i++)
+    {
+        if(v[i]==true)
+        {
+            if(v[A-i]==true)
+            {
+                ans.push_back(i);
+                ans.push_back(A-i);
+                return ans;
+            }
+        }
+    }
+    return ans;
+}
