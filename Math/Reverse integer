@@ -1,0 +1,20 @@
+int Solution::reverse(int A) {
+    
+    long long int x=0,z,p;
+    int y=1;
+    z=A;
+    if(A<0)
+    { y=-1;
+      z=-z;
+    }
+    while(z>0)
+    {   p=z%10;
+        x=x*10+p;
+        z=z/10;
+    }
+    x=x*y;
+    if(x > INT_MAX || x < INT_MIN)
+    return 0;
+    
+    return (int)x;
+}
