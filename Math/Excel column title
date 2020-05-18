@@ -1,0 +1,22 @@
+string Solution::convertToTitle(int A) {
+      string ans="";
+      int i;
+    while(A){
+        int rem=A%26;
+        if(rem){
+            char c=rem-1+'A';
+            string s;
+            s.push_back(c);
+            ans.insert(i,s);
+            A=A/26;
+            i++;
+        }
+        else{
+            ans.insert(i,"Z");
+            A=A/26-1;
+            i++;
+        }
+    }
+    reverse(ans.begin(),ans.end());
+return ans;
+}
