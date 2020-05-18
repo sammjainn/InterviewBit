@@ -1,0 +1,9 @@
+int Solution::titleToNumber(string A) {
+    
+    int n=A.length(),i,count=0;
+    for(i=0;i<n;i++)
+    {   count*=26;
+        count+=A[i]-'A'+1;
+    }
+    return count;
+}
