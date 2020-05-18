@@ -1,0 +1,15 @@
+void Solution::arrange(vector<int> &A) {
+    int n=A.size(),i;
+    vector<int>v(n);
+    
+    for(i=0;i<n;i++)
+    {
+        v[i]=A[A[i]];
+    }
+ 
+    for(i=0;i<n;i++)
+    {
+        A[i]=v[i];
+    }
+    v.clear();
+}
