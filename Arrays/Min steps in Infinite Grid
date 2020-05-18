@@ -1,0 +1,17 @@
+int Solution::coverPoints(vector<int> &A, vector<int> &B) {
+    
+    int p=A.size(),q=B.size();
+    int ans=0,i;
+    if(p!=q)
+    return 0;
+    else{
+        for(i=0;i<p-1;i++)
+        {
+            int x=abs(A[i+1]-A[i]);
+            int y=abs(B[i+1]-B[i]);
+            ans+=(x>y)?x:y;
+        }
+    }
+    return ans;
+    
+}
